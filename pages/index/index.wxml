@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <button type="{{btnType}}" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="tapFunc"> {{btnTitle}} </button>
+    <button type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+                disabled="{{disabled}}" bindtap="remove"> 删除 </button>
+  </view>
+  <view wx:for="{{dataList}}" wx:key="{{item.time}}">
+    {{item.time}}: 纬度{{item.latitude}}-经度{{item.longitude}}
+  </view>  
+</view>
